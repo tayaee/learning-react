@@ -1,7 +1,11 @@
 import React from "react";
 
-function MyComponent() {
-  return <div>New Component!</div>;
+function MyComponent(props) {
+  return <div>New Component! {props.name}</div>;
 }
+
+MyComponent.defaultProps = {
+  name: 'Default name'
+};
 
 export default MyComponent;
