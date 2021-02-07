@@ -11,6 +11,7 @@ class App extends Component {
         <div>IntelliJ add 'import' statements automatically.</div>
         <MyComponent name="React"/>
         <MyComponent/>
+        <MyComponent>Children Text</MyComponent>
       </>
     )
   }
