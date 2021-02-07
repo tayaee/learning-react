@@ -1,34 +1,18 @@
 import './App.css';
 import * as React from "react";
+import {Component} from "react/cjs/react.production.min";
+import MyComponent from "./MyComponent";
 
-function App() {
-  const name = '리액트';
-  const style = {
-    backgroundColor: 'black',
-    color: 'aqua',
-    fontSize: '40px',
-    fontWeight: 'bold',
-    padding: 16 // px
+class App extends Component {
+  render() {
+    return (
+      <>
+        <div>Use Quick Fix to switch to/from functional/class component.</div>
+        <div>IntelliJ add 'import' statements automatically.</div>
+        <MyComponent/>
+      </>
+    )
   }
-  return (
-    <>
-      {/*comment 1*/}
-      <div style={style}>{name}1</div>
-      <div style={{
-        // comment 2
-        backgroundColor: 'gray',
-        color: 'lightblue',
-        fontSize: '40px',
-        fontWeight: 'bold',
-        padding: 16 // px
-      }}>{name}2
-      </div>
-      <div className='react'>{name}3 FIXME</div>
-      <input/>
-      /* This is not a comment */
-      <div>React version {React.version}</div>
-    </>
-  );
 }
 
 export default App;
