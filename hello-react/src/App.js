@@ -9,6 +9,7 @@ class App extends Component {
       <>
         <div>Use Quick Fix to switch to/from functional/class component.</div>
         <div>IntelliJ add 'import' statements automatically.</div>
+        <MyComponent name="React"/>
         <MyComponent/>
       </>
     )
