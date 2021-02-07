@@ -1,15 +1,27 @@
-// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const name = '리액트';
+  const style = {
+    backgroundColor: 'black',
+        color: 'aqua',
+        fontSize: '40px',
+        fontWeight: 'bold',
+        padding: 16 // px    
+  }
   return (
-    <>
-      <h1>{name}야 안녕</h1>  
-      {name === '리액트' && <h1>리액트입니다</h1>}
-      <h2>잘 작동하니?</h2>
+    <>    
+      <div style={style}>{name}1</div>
+      <div style={{
+        backgroundColor: 'gray',
+        color: 'lightblue',
+        fontSize: '40px',
+        fontWeight: 'bold',
+        padding: 16 // px
+      }}>{name}2</div>
+      <div className='react'>{name}3</div>
     </>
-  );
+    );
 }
 
 export default App;
