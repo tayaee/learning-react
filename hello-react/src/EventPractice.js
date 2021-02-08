@@ -1,48 +1,39 @@
-import React, {Component} from "react";
+import React from "react";
+import {useState} from "react";
 
-class EventPractice extends Component {
-  state = {
-    username: '',
-    message: ''
+const EventPractice = () => {
+  const [username, setUsername] = useState('');
+  const [message, setMessage] = useState('');
+  const handleUsernameChange = (e) => setUsername(e.target.value);
+  const handleMessageChange = (e) => setMessage(e.target.value);
+  const handleClick = () => {
+    alert(username + ': ' + message);
+    setUsername('');
+    setMessage('');
   };
-
-  handleInputChange = (e) => {
-    console.log(e.target.name + '=' + e.target.value);
-    this.setState({[e.target.name]: e.target.value})
-  };
-
-  handleButtonSubmit = () => {
-    alert(this.state.username + ': ' + this.state.message);
-    this.setState({username: '', message: ''})
-  };
-
-  handleKeyPress = (e) => {
-    console.log(e.key);
+  const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      this.handleButtonSubmit();
+      handleClick();
     }
   };
-
-  render() {
-    return (
-      <div>
-        <h1>Event Test</h1>
-        <input type='text'
-               name='username'
-               value={this.state.username}
-               placeholder='Enter username'
-               onChange={this.handleInputChange}/>
-        <input type='text'
-               name='message'
-               value={this.state.message}
-               placeholder='Enter message'
-               onChange={this.handleInputChange}
-               onKeyPress={this.handleKeyPress}
-        />
-        <button onClick={this.handleButtonSubmit}>Submit</button>
-      </div>
-    )
-  }
-}
+  return (
+    <div>
+      <h1>Event Test</h1>
+      <input type='text'
+             name='username'
+             value={username}
+             placeholder='Enter username'
+             onChange={handleUsernameChange}/>
+      <input type='text'
+             name='message'
+             value={message}
+             placeholder='Enter message'
+             onChange={handleMessageChange}
+             onKeyPress={handleKeyPress}
+      />
+      <button onClick={handleClick}>Submit</button>
+    </div>
+  )
+};
 
 export default EventPractice;
