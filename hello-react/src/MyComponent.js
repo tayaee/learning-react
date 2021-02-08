@@ -1,7 +1,8 @@
 import React from "react";
 
 function MyComponent(props) {
-  return <div>New Component! name={props.name}, children={props.children}</div>;
+  const { name, children } = props;
+  return <div>New Component! name={name}, children={children} p96</div>;
 }
 
 MyComponent.defaultProps = {
