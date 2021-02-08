@@ -16,6 +16,13 @@ class EventPractice extends Component {
     this.setState({username: '', message: ''})
   };
 
+  handleKeyPress = (e) => {
+    console.log(e.key);
+    if (e.key === 'Enter') {
+      this.handleButtonSubmit();
+    }
+  };
+
   render() {
     return (
       <div>
@@ -29,7 +36,9 @@ class EventPractice extends Component {
                name='message'
                value={this.state.message}
                placeholder='Enter message'
-               onChange={this.handleInputChange}/>
+               onChange={this.handleInputChange}
+               onKeyPress={this.handleKeyPress}
+        />
         <button onClick={this.handleButtonSubmit}>Submit</button>
       </div>
     )
