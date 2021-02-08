@@ -11,10 +11,19 @@ class Counter extends Component {
     const {number, fixedNumber} = this.state;
     return (
       <div>
-        <h1>{number}</h1>
+        <h1>V1: {number}</h1>
         <h2>Fixed number: {fixedNumber}</h2>
         <button onClick={() => {
-          this.setState({number: number + 1})
+          this.setState((prevState, props) => {
+            return {
+              number: prevState.number + 1
+            }
+          });
+          this.setState((prevState, props) => {
+            return {
+              number: prevState.number + 1
+            }
+          });
         }}>+1
         </button>
       </div>
