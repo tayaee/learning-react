@@ -19,7 +19,8 @@ class ValidationSample extends Component {
     this.setState({
       clicked: true,
       validated: this.state.password === '0000'
-    })
+    });
+    this.input.focus();
   };
 
   render() {
@@ -29,7 +30,9 @@ class ValidationSample extends Component {
                name='password'
                value={this.state.password}
                onChange={this.handleChange}
-               className={this.state.clicked ? (this.state.validated ? 'success' : 'failure') : ''}/>
+               className={this.state.clicked ? (this.state.validated ? 'success' : 'failure') : ''}
+               ref={(ref) => this.input=ref}
+        />
         <button onClick={this.handleButtonSubmit}>Submit</button>
       </div>
     )
