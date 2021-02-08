@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ErrorBoundary from "./ErrorBoundary";
 
 class LifeCycleSample extends Component {
   state = {
@@ -50,6 +51,7 @@ class LifeCycleSample extends Component {
       color: this.props.color
     };
     return <div>
+      {this.props.missing.color}
       <div style={style} ref={(ref) => this.myRef = ref}>
         <p>child.number: {this.state.number}</p>
         <p>child.color: {this.state.color}</p>

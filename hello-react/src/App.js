@@ -1,6 +1,7 @@
 import './App.css';
 import * as React from "react";
 import LifeCycleSample from "./LifeCycleSample";
+import ErrorBoundary from "./ErrorBoundary";
 
 class App extends React.Component {
   state = {
@@ -24,7 +25,9 @@ class App extends React.Component {
         {/*Maximum update depth exceeded: Pass function instead of invocation */}
         <button onClick={() => this.onButtonClick()}>New Color</button>
         <p>parent.color: {this.state.color}</p>
-        <LifeCycleSample color={this.state.color}/>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color}/>
+        </ErrorBoundary>
       </div>
     )
   }

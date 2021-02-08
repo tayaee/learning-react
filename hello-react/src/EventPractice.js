@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const EventPractice = () => {
   const [form, setForm] = useState({
     username: '',
-    message: ''
+    error_msg: ''
   });
   // FIXME: TypeError: form is not iterable => Use {, } instead of [, ].
   const {username, message} = form;
@@ -17,7 +17,7 @@ const EventPractice = () => {
   };
   const onClick = () => {
     alert(username + ': ' + message);
-    setForm({username: '', message: ''});
+    setForm({username: '', error_msg: ''});
   };
   const onKeyPress = (e) => {
     if (e.key === 'Enter') {
