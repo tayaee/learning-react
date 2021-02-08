@@ -1,9 +1,9 @@
 import './App.css';
 import * as React from "react";
-import EventPractice from "./EventPractice";
+import ValidationSample from "./ValidationSample";
 
 const App = () => {
-  return <EventPractice/>
+  return <ValidationSample/>
 };
 
 export default App;
