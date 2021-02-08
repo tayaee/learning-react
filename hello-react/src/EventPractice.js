@@ -5,21 +5,21 @@ class EventPractice extends Component {
     message: ''
   };
 
-  constructor(props) {
-    super(props);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleButtonSubmit = this.handleButtonSubmit.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.handleInputChange = this.handleInputChange.bind(this);
+  //   this.handleButtonSubmit = this.handleButtonSubmit.bind(this);
+  // }
 
-  handleInputChange(e) {
+  handleInputChange = (e) => {
     console.log(e.target.name + '=' + e.target.value);
     this.setState({message: e.target.value})
-  }
+  };
 
-  handleButtonSubmit() {
+  handleButtonSubmit = () => {
     alert(this.state.message);
     this.setState({message: ''})
-  }
+  };
 
   render() {
     return (
