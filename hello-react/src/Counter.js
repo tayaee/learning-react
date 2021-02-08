@@ -2,13 +2,10 @@ import {Component} from "react/cjs/react.production.min";
 import React from "react";
 
 class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      number: 0,
-      fixedNumber: 1,
-    };
-  }
+  state = {
+    number: 0,
+    fixedNumber: 1,
+  };
 
   render() {
     const {number, fixedNumber} = this.state;
