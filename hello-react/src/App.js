@@ -12,6 +12,7 @@ class App extends React.Component {
   };
 
   onButtonClick = () => {
+    console.log('1. App.onButtonClick called');
     this.setState({
       color: this.getRandomColor()
     })
