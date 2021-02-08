@@ -17,6 +17,11 @@ class EventPractice extends Component {
                  console.log(e.target.name + '=' + e.target.value);
                  this.setState({message: e.target.value})
                }}/>
+        <button onClick={() => {
+          alert(this.state.message);
+          this.setState({message: ''})
+        }}>Submit
+        </button>
       </div>
     )
   }
