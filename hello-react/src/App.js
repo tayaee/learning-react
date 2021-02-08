@@ -1,9 +1,12 @@
 import './App.css';
 import * as React from "react";
-import ValidationSample from "./ValidationSample";
+import ScrollBox from "./ScrollBox";
 
 const App = () => {
-  return <ValidationSample/>
+  return <div>
+    <ScrollBox/>
+    <button>Scroll down to the bottom</button>
+  </div>
 };
 
 export default App;
