@@ -8,6 +8,6 @@ const App = () => {
       <Say/>
     </>
   )
-}
+};
 
 export default App;
