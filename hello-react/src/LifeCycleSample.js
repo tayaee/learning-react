@@ -3,6 +3,7 @@ import React, {Component} from "react";
 class LifeCycleSample extends Component {
   state = {
     number: 0,
+    color: null,
   };
 
   onIncrementButtonClick = () => {
@@ -11,6 +12,14 @@ class LifeCycleSample extends Component {
     })
   };
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('LifeCycleSample.getDerivedStateFromProps() called');
+    if (nextProps.color !== prevState.color) {
+      return {color: nextProps.color};
+    }
+    return null;
+  }
+
   render() {
     const style = {
       color: this.props.color
@@ -18,7 +27,7 @@ class LifeCycleSample extends Component {
     return <div>
       <div style={style}>
         <p>child.number: {this.state.number}</p>
-        <p>props.color: {this.props.color}</p>
+        <p>child.color: {this.state.color}</p>
       </div>
       <button onClick={this.onIncrementButtonClick}>Increment</button>
     </div>
