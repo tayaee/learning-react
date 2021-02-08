@@ -8,7 +8,13 @@ const IterationSample = () => {
   ]);
   const [inputText, setInputText] = useState('');
   const [nextId, setNextId] = useState(4);
-  const nameList = names.map((e) => <li key={e.id}>{e.id} {e.name}</li>);
+  const nameList = names.map((e) =>
+    <li key={e.id} onDoubleClick={() => onDoubleClickHandler(e.id)}>{e.id} {e.name}</li>
+  );
+  const onDoubleClickHandler = (id) => {
+    const newNames = names.filter(e => e.id !== id);
+    setNames(newNames);
+  };
   const onInputChange = (e) => {
     setInputText(e.target.value)
   };
