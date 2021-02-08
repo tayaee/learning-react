@@ -1,13 +1,12 @@
 import './App.css';
 import * as React from "react";
-import ScrollBox from "./ScrollBox";
+import IterationSample from "./IterationSample";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <ScrollBox ref={(ref) => this.scrollBox = ref}/>
-        <button onClick={() => this.scrollBox.scrollToBottom()}>Scroll Down</button>
+        <IterationSample/>
       </div>
     )
   }
