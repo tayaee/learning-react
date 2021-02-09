@@ -9,7 +9,6 @@ function reducer(state, action) {
 }
 
 const Info = () => {
-  console.log('Info() called');
   const [state, dispatch] = useReducer(reducer, {
     name: '',
     nickname: ''
