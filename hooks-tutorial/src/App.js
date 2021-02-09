@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import Info from "./Info";
 
 const App = () => {
-  return <Info/>
+  const [visible, setVisible] = useState(true);
+  return <div>
+    <button onClick={() => setVisible(!visible)}>Toggle</button>
+    {visible && <Info/>}
+  </div>
 };
 
 export default App;
