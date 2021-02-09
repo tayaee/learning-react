@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from "react";
+import React, {useCallback, useMemo, useRef, useState} from "react";
 
 function getAverage(numList) {
   console.log('This is optimized now by useMemo().');
@@ -11,16 +11,18 @@ function getAverage(numList) {
 const Average = () => {
   const [numList, setNumList] = useState([]);
   const [value, setValue] = useState('');
+  const inputRef = useRef();
   const onChange = useCallback(e => setValue(e.target.value), []);
   const onClick = useCallback(() => {
     const newNumList = numList.concat(parseInt(value));
     console.log('numList: ', newNumList);
     setNumList(newNumList);
     setValue('');
+    inputRef.current.focus();
   }, [value, numList]);
   let avg = useMemo(() => getAverage(numList), [numList]);
   return <div>
-    <input name={value} value={value} onChange={onChange}/>
+    <input name={value} value={value} onChange={onChange} ref={inputRef}/>
     <button onClick={onClick}>Add</button>
     <ul>
       {numList.map((e, index) => <li key={index}>{e}</li>)}
