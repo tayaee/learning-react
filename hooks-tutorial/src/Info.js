@@ -7,7 +7,7 @@ const Info = () => {
   useEffect(() => {
     console.log('useEffect() called. The same was as componentDidMount in class component.');
     console.log('name: ' + name + ', nickname: ' + nickname);
-  }, []);
+  }, [name]);
   const onNameChange = (e) => setName(e.target.value);
   const onNicknameChange = (e) => setNickname(e.target.value);
   return <div>
