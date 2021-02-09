@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import {useMemo} from "react";
 
 function getAverage(numList) {
-  console.log('FIXME this is called on each keyboard input');
+  console.log('This is optimized now.');
   if (numList.length === 0) return 0;
   if (numList.length === 1) return numList[0];
   let sum = numList.reduce((a, b) => a + b);
@@ -18,7 +19,7 @@ const Average = () => {
     setNumList(newNumList);
     setValue('');
   };
-  let avg = getAverage(numList);
+  let avg = useMemo(() => getAverage(numList), [numList]);
   return <div>
     <input name={value} value={value} onChange={onChange}/>
     <button onClick={onClick}>Add</button>
