@@ -1,20 +1,24 @@
-import React, {useEffect, useState} from "react";
+import React, {useReducer} from "react";
+
+function reducer(state, action) {
+  console.log('reducer() called', state, action);
+  return {
+    ...state,
+    [action.name]: action.value
+  };
+}
 
 const Info = () => {
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
-  useEffect(() => {
-    console.log('useEffect() called. The same was as componentDidMount in class component.');
-    console.log('name: ' + name + ', nickname: ' + nickname);
-    return () => {
-      console.log('useEffect() is used for cleanup on unmount.')
-    }
-  }, [name]);
-  const onNameChange = (e) => setName(e.target.value);
-  const onNicknameChange = (e) => setNickname(e.target.value);
+  console.log('Info() called');
+  const [state, dispatch] = useReducer(reducer, {
+    name: '',
+    nickname: ''
+  });
+  const {name, nickname} = state;
+  const onChange = (e) => dispatch(e.target);
   return <div>
-    <input value={name} placeholder={'Enter name'} onChange={onNameChange}/>
-    <input value={nickname} placeholder={'Enter nickname'} onChange={onNicknameChange}/>
+    <input name='name' value={name} placeholder={'Enter name'} onChange={onChange}/>
+    <input name='nickname' value={nickname} placeholder={'Enter nickname'} onChange={onChange}/>
     <div>Name: {name}</div>
     <div>Nick Name: {nickname}</div>
   </div>
