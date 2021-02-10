@@ -1,0 +1,51 @@
+$red: red;
+$orange: orange;
+$yellow: yellow;
+$green: green;
+$blue: blue;
+$indigo: indigo;
+$purple: purple;
+
+// 함수 같은 거 정의할 수 있다.
+@mixin square($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
+
+.SassComponent {
+  display: flex;
+  .box {
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &.red {
+      background: $red;
+      @include square(1);
+    }
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+    &.indigo {
+      background: indigo;
+      @include square(6);
+    }
+    &.purple {
+      background: $purple;
+      @include square(7);
+    }
+  }
+}
