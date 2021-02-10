@@ -1,5 +1,5 @@
 import React from "react";
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 const Box = styled.div`
   background: ${props => props.color || 'blue'};
@@ -25,7 +25,7 @@ const Button = styled.button`
   
   ${props =>
   props.inverted &&
-  css`
+  `
       background: none;
       color: white;
       border: 2px solid white;
