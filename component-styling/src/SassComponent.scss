@@ -1,18 +1,4 @@
-$red: red;
-$orange: orange;
-$yellow: yellow;
-$green: green;
-$blue: blue;
-$indigo: indigo;
-$purple: purple;
-
-// 함수 같은 거 정의할 수 있다.
-@mixin square($size) {
-  $calculated: 32px * $size;
-  width: $calculated;
-  height: $calculated;
-}
-
+@import 'styles/utils.scss';
 .SassComponent {
   display: flex;
   .box {
@@ -40,7 +26,7 @@ $purple: purple;
       @include square(5);
     }
     &.indigo {
-      background: indigo;
+      background: $indigo;
       @include square(6);
     }
     &.purple {
