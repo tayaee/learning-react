@@ -11,7 +11,7 @@
     }
     &.orange {
       background: $orange;
-      @include square(2);
+      @include square(1);
     }
     &.yellow {
       background: $yellow;
