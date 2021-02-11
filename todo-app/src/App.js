@@ -2,12 +2,14 @@ import './App.css';
 import React from "react";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoInsert from "./components/TodoInsert";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   console.log('App()');
   return (
     <TodoTemplate>
       <TodoInsert/>
+      <TodoList/>
     </TodoTemplate>
   )
 };
