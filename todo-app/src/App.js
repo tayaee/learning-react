@@ -1,9 +1,11 @@
 import './App.css';
 import React from "react";
+import TodoTemplate from "./components/TodoTemplate";
 
 const App = () => {
+  console.log('App()');
   return (
-    <div>To Do app base version</div>
+    <TodoTemplate>Todo content</TodoTemplate>
   )
 };
 
