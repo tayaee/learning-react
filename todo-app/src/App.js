@@ -28,10 +28,14 @@ const App = () => {
     setTodos(todos.concat(todo));
     nextId.current += 1;
   }, [todos]);
+  const onRemove = useCallback(id => {
+    const updatedTodos = todos.filter(todo => todo.id != id);
+    setTodos(updatedTodos);
+  }, [todos]);
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onRemove={onRemove}/>
     </TodoTemplate>
   )
 };
