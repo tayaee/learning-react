@@ -6,18 +6,18 @@ import TodoList from "./components/TodoList";
 
 const App = () => {
   console.log('App()');
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      checked: false
-    },
-    {
-      id: 2,
-      text: 'Scrambled it to make a type specimen book. It has survived not',
-      checked: true
+  function createBulkTodos() {
+    const arr = [];
+    for (let i = 1; i <= 2500; i++) {
+      arr.push({
+        id: i,
+        text: `To do ${i}`,
+        checked: false
+      })
     }
-  ]);
+    return arr;
+  }
+  const [todos, setTodos] = useState(createBulkTodos());
   const nextId = useRef(3);
   const onInsert = useCallback((text) => {
     const todo = {
