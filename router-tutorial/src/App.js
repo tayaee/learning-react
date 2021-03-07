@@ -11,6 +11,7 @@ const App = () => {
       <ul>
         <li><Link to={"/"}>Home</Link></li>
         <li><Link to={"/about"}>About</Link></li>
+        <li><Link to={"/about?detail=true&num=777"}>About with details</Link></li>
         <li><Link to={"/info"}>Info</Link></li>
         <li><Link to={"/profile/user1"}>User 1 profile</Link></li>
         <li><Link to={"/profile/user2"}>User 2 profile</Link></li>
