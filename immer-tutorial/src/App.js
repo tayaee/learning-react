@@ -14,7 +14,7 @@ function App() {
       const {name, value} = e.target;
       setForm(
         // {...form, [name]: [value]}
-        produce(form, draft => {
+        produce(draft => {
           draft[name] = value
         })
       );
@@ -32,7 +32,7 @@ function App() {
       };
       setData(
         // {...data, array: data.array.concat(info)}
-        produce(data, draft => {
+        produce(draft => {
           draft.array.push(info);
         })
       );
@@ -46,7 +46,7 @@ function App() {
     id => {
       setData(
         // {...data, array: data.array.filter(info => info.id != id)}
-        produce(data, draft => {
+        produce(draft => {
           draft.array.splice(draft.array.findIndex(info => info.id === id), 1)
         })
       )
