@@ -1,1 +1,1 @@
-yarn start
+call yarn start
