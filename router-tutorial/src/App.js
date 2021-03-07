@@ -5,6 +5,7 @@ import About from "./About";
 import Home from "./Home";
 import Profile from "./Profile";
 import Profiles from "./Profiles";
+import HistorySample from "./HistorySample";
 
 const App = () => {
   return <div>
@@ -17,6 +18,7 @@ const App = () => {
         <li><Link to={"/profiles"}>Profiles</Link></li>
         <li><Link to={"/profile/user1"}>User 1 profile</Link></li>
         <li><Link to={"/profile/user2"}>User 2 profile</Link></li>
+        <li><Link to={"/history"}>History Demo</Link></li>
       </ul>
     </div>
     <hr/>
@@ -24,6 +26,7 @@ const App = () => {
     <Route path={["/about", "/info"]} component={About}/>
     <Route path="/profile/:username" component={Profile} exact={true}/>
     <Route path="/profiles" component={Profiles}/>
+    <Route path="/history" component={HistorySample}/>
   </div>
 };
 
